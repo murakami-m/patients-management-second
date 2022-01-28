@@ -1,0 +1,9 @@
+<div class="contents row">
+  <div class="success">
+    <h3>患者登録が完了しました。</h3>
+    <%# <%= link_to "転院調整患者の場合はこちらへ", edit_patient_path(@patient.id), method: :get, class: "btn" %>
+    <%# 上の１行を生かす、下の１行を消す %>
+    <%= link_to "転院調整患者の場合はこちらへ", root_path, method: :get, class: "btn" %>
+    <%= link_to "患者一覧へ戻る場合はこちらへ", root_path, method: :get, class: "btn" %>
+  </div>
+</div>
