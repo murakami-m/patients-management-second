@@ -14,11 +14,11 @@
       <td class="hospitalization_date"><%= l patient.hospitalization_date, default: '-' %></td>
       <td class="name"><%= link_to patient.name, patient_path(patient.id), method: :get, class:"link" %></td>
       <td class="age"><%= patient.age %></td>
-      <td class="gender"><%= patient.gender_id %></td>
+      <td class="gender"><%= patient.gender.name %></td>
       <td class="disease"><%= patient.disease %></td>
-      <td class="doctor"><%= patient.doctor_id %></td>
-      <td class="manager"><%= patient.adjustment_manager_id %></td>
-      <td class="ward"><%= patient.ward_id %></td>
+      <td class="doctor"><%= patient.doctor.name %></td>
+      <td class="manager"><%= patient.adjustment_manager.name %></td>
+      <td class="ward"><%= patient.ward.name %></td>
     </tr>
   <% end %>
 </table>
