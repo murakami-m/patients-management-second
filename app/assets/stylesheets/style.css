@@ -1,0 +1,48 @@
+.header {
+  width: 100vw;
+}
+
+.upper-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px 5px 0;
+}
+
+.logo {
+  width: 65vw;
+}
+
+.header-nav {
+  width: 35vw;
+  display: flex;
+  justify-content: center;
+}
+
+.post {
+  width: 15vw;
+  font-size: 25px;
+  color: #FF6928;
+  text-decoration: none;
+}
+
+.lower-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 5vh;
+  margin: 10px 0 20px;
+}
+
+.list {
+  border: 1px solid white;
+  background-color: #FFCC33;
+  text-decoration: none;
+  color: #FF6928;
+  font-size: 25px;
+  width: 100vw;
+  height: 5vh;
+  text-align: center;
+  padding: 5px 0 0;
+}
