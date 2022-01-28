@@ -12,9 +12,7 @@
   <% @patients.each do |patient| %>
     <tr>
       <td class="hospitalization_date"><%= l patient.hospitalization_date, default: '-' %></td>
-      <%# <td class="name"><%= link_to patient.name, patient_path(patient.id), method: :get, class:"link" %></td>
-      <%# 上の１行を生かす、下の１行を消す %>
-      <td class="name"><%= patient.name %></td>
+      <td class="name"><%= link_to patient.name, patient_path(patient.id), method: :get, class:"link" %></td>
       <td class="age"><%= patient.age %></td>
       <td class="gender"><%= patient.gender_id %></td>
       <td class="disease"><%= patient.disease %></td>

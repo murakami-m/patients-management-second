@@ -18,6 +18,7 @@ class CreatePatients < ActiveRecord::Migration[6.0]
       t.date       :hospitalization_date
       t.date       :discharge_date
       t.integer    :state_id,                null: false
+      t.integer    :accept_existence_id,     null: false
       t.date       :accept_expected_date
       t.date       :discharge_expected_date
       t.string     :destination

@@ -5,6 +5,7 @@ class Patient < ApplicationRecord
   belongs_to :ward
   belongs_to :adjustment_manager
   belongs_to :state
+  belongs_to :accept_existence
 
   with_options presence: true do
     validates :number 
@@ -20,5 +21,6 @@ class Patient < ApplicationRecord
     validates :key_person_relationship
     validates :before_hospitalization
     validates :state_id, numericality: { other_than: 1 }
+    validates :accept_existence_id, numericality: { other_than: 1 }
   end
 end

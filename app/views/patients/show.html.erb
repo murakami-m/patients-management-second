@@ -1,0 +1,147 @@
+<div class="patient-show">
+  <div class="Basic information">
+    患者基本情報
+    <table class="table", border="1">
+      <tr>
+        <th> 項目 </th>
+        <th> 情報 </th>
+      </tr>
+      <tr>
+        <td> 患者ID
+        <td class="number"><%= @patient.number %></td>
+      </tr>
+      <tr>
+      <tr>
+        <td> 氏名
+        <td class="name"><%= @patient.name %></td>
+      </tr>
+      <tr>
+        <td> 氏名（カタカナ）
+        <td class="name-kana"><%= @patient.name_kana %></td>
+      </tr>
+      <tr>
+        <td> 生年月日
+        <td class="birthday"><%= l @patient.birthday %></td>
+      </tr>
+      <tr>
+        <td> 年齢
+        <td class="age"><%= @patient.age %>歳</td>
+      </tr>
+      <tr>
+        <td> 性別
+        <td class="gender"><%= @patient.gender.name %></td>
+      </tr>
+      <tr>
+        <td> 入院日
+        <td class="hospitalization-date"><%= l @patient.hospitalization_date, default: '-' %></td>
+      </tr>
+      <tr>
+        <td> 退院日
+        <td class="discharge-date"><%= l @patient.discharge_date, default: '-' %></td>
+      </tr>
+      <tr>
+        <td> 主病名
+        <td class="disease"><%= @patient.disease %></td>
+      </tr>
+      <tr>
+        <td> 状況
+        <td class="state"><%= @patient.state.title %></td>
+      </tr>
+      <tr>
+        <td> 病棟
+        <td class="ward"><%= @patient.ward.name %></td>
+      </tr>
+      <tr>
+        <td> 主治医
+        <td class="doctor"><%= @patient.doctor.name %></td>
+      </tr>
+    </table>
+  </div>
+  <% if @patient.accept_existence_id == 2 %>
+    <div class="accept-information">  
+
+      転院調整情報
+      <table class="table", border="1">
+        <tr>
+          <th> 項目 </th>
+          <th> 情報 </th>
+        </tr>
+        <tr>
+          <td> 入院前（自宅or施設or病院)
+          <td class="before-hospitalization"><%= @patient.before_hospitalization %></td>
+        </tr>
+        <tr>
+          <td> 入院希望日
+          <td class="accept_expected-date"><%= l @patient.accept_expected_date, default: '-' %></td>
+        </tr>
+        <tr>
+          <td> 住所
+          <td class="address"><%= @patient.address %></td>
+        </tr>
+        <tr>
+          <td> キーパーソン
+          <td class="key-perso-relationship"><%= @patient.key_person_relationship %></td>
+        </tr>
+        <tr>
+          <td> 家族背景・その他
+          <td class="remarks"><%= @patient.remarks %></td>
+        </tr>
+        <tr>
+          <td> 調整担当者
+          <td class="manager"><%= @patient.adjustment_manager.name %></td>
+        </tr>
+      </table>
+      <%# ここにコメントを入れる %>
+    </div>
+  <% end%>
+
+  
+  <div class="discharge-information">
+    退院調整情報
+    <table class="table", border="1">
+      <tr>
+        <th> 項目 </th>
+        <th> 情報 </th>
+      </tr>
+      <tr>
+        <td> 退院予定(希望)日
+        <td class="discharge-date"><%= l @patient.discharge_date, default: '-' %></td>
+      </tr>
+      <tr>
+        <td> 入院前（自宅or施設or病院)
+        <td class="before-hospitalization"><%= @patient.before_hospitalization %></td>
+      </tr>
+      <tr>
+        <td> 退院(予定)先
+        <td class="destination"><%= @patient.destination %></td>
+      </tr>
+      <tr>
+        <td> 患者住所
+        <td class="address"><%= @patient.address %></td>
+      </tr>
+      <tr>
+        <td> キーパーソン
+        <td class="key-perso-relationship"><%= @patient.key_person_relationship %></td>
+      </tr>
+      <tr>
+        <td> キーパーソン住所
+        <td class="key_person_address"><%= @patient.key_person_address %></td>
+      </tr>
+      <tr>
+        <td> 家族背景・その他
+        <td class="remarks"><%= @patient.remarks %></td>
+      </tr>
+      <tr>
+        <td> 調整担当者
+        <td class="manager"><%= @patient.adjustment_manager.name %></td>
+      </tr>
+    </table>
+    <%# ここにコメントを入れる %>
+  </div>
+  </div>
+  <%# <div class="btn-group"> %>
+      <%# <%= link_to "転院調整ページへ移動", patient_accept_adjustment_path(@patient.id, @accept_adjustment.id), method: :get, class: "btn" %>
+      <%# <%= link_to "患者情報編集ページへ移動", edit_patient_path, method: :get, class: "btn" %>
+      <%# <%= link_to '患者情報を削除する', patient_path(@patient.id), method: :delete, data: { confirm: '一度削除すると元に戻せませんが、削除しますか？' }, class: "btn" %>
+    </div>
+</div>

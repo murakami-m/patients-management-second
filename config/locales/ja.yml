@@ -1,0 +1,9 @@
+ja:
+  date:
+    order:
+      - :year
+      - :month
+      - :day
+    formats:
+      default: "%Y/%m/%d"
+      short: "%m/%d"

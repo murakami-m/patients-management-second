@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   root to: "patients#index"
-  resources :patients, only: [:index, :new, :create]
+  resources :patients, only: [:index, :new, :create, :show]
 end

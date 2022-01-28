@@ -124,6 +124,13 @@
         </div>
         <%= f.collection_select(:state_id, State.all, :id, :name, {}, {class:"input-form", id:"patient-state"}) %>
       </div>
+      <div class="category accept-existence">
+        <div class="weight-bold-text">
+          転院調整の有無
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:accept_existence_id, AcceptExistence.all, :id, :name, {}, {class:"input-form", id:"accept-existence"}) %>
+      </div>
       <div class="category hospitalization-date">
         <div class="weight-bold-text">
           入院日(入院患者登録の場合のみ)
