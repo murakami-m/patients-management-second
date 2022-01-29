@@ -139,8 +139,7 @@
     <%# ここにコメントを入れる %>
   </div>
   <div class="btn-group">
-      <%# <%= link_to "転院調整ページへ移動", patient_accept_adjustment_path(@patient.id, @accept_adjustment.id), method: :get, class: "btn" %>
       <%= link_to "編集ページへ移動", edit_patient_path, method: :get, class: "btn" %>
-      <%# <%= link_to '患者情報を削除する', patient_path(@patient.id), method: :delete, data: { confirm: '一度削除すると元に戻せませんが、削除しますか？' }, class: "btn" %>
+      <%= link_to '患者情報を削除する', patient_path(@patient.id), method: :delete, data: { confirm: '一度削除すると元に戻せませんが、削除しますか？' }, class: "btn" %>
     </div>
 </div>
