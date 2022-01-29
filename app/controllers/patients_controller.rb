@@ -32,6 +32,7 @@ class PatientsController < ApplicationController
     end
   end
 
+  
   private
   
   def patient_params
