@@ -8,5 +8,4 @@ class AdjustmentManager < ActiveHash::Base
 
   include ActiveHash::Associations
   has_many :patients
-
- end
+end

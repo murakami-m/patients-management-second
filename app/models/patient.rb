@@ -8,7 +8,7 @@ class Patient < ApplicationRecord
   belongs_to :accept_existence
 
   with_options presence: true do
-    validates :number 
+    validates :number
     validates :name
     validates :name_kana
     validates :birthday

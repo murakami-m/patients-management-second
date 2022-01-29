@@ -7,5 +7,4 @@ class AcceptExistence < ActiveHash::Base
 
   include ActiveHash::Associations
   has_many :patients
-
- end
+end
