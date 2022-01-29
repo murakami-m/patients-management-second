@@ -8,11 +8,11 @@ class Patient < ApplicationRecord
   belongs_to :accept_existence
 
   with_options presence: true do
-    validates :number
+    validates :number, uniqueness: true, numericality: { only_integer: true }, length: { is: 4 }
     validates :name
     validates :name_kana
     validates :birthday
-    validates :age
+    validates :age, numericality: { only_integer: true }, length: { minimum: 1, maximum:3 }
     validates :gender_id, numericality: { other_than: 1 }
     validates :address
     validates :disease

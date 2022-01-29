@@ -4,7 +4,7 @@
   </div>
   <%= form_with(model: @patient, local: true) do |f| %>
 
-      <%#= render 'shared/error_messages', model: f.object %>
+      <%= render 'shared/error_messages', model: f.object %>
 
     <div class="new-patients">
       <div class="category patient-number">
