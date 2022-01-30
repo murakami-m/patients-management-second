@@ -21,9 +21,14 @@
 
 .post {
   width: 15vw;
-  font-size: 25px;
+  margin: 10px auto;
+  border: 3px solid #FF6928;
+  border-radius: 5px;
+  background-color: #FFDBC9	;
   color: #FF6928;
+  font-size: 25px;
   text-decoration: none;
+  text-align: center;
 }
 
 .lower-header {
@@ -45,4 +50,10 @@
   height: 5vh;
   text-align: center;
   padding: 5px 0 0;
+}
+
+form input[type="submit"] {
+  background-color: #FFCC33;
+  border-radius: 5px;
+  border: 1px solid ;
 }
