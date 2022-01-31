@@ -2,7 +2,6 @@ class PatientsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_patient, only: [:edit, :show]
 
-  
   def index
     @patients = Patient.all
   end
