@@ -5,6 +5,7 @@ class User < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :department
   has_many :accept_comments
+  has_many :discharge_comments
 
   validates :number, :name, presence: true
   validates :department_id, numericality: { other_than: 1 }

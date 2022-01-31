@@ -1,0 +1,2 @@
+module DischargeCommentsHelper
+end

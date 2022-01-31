@@ -21,6 +21,8 @@ class PatientsController < ApplicationController
   def show
     @accept_comment = AcceptComment.new
     @accept_comments = @patient.accept_comments.includes(:user)
+    @discharge_comment = DischargeComment.new
+    @discharge_comments = @patient.discharge_comments.includes(:user)
   end
 
   def edit

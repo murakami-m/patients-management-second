@@ -155,7 +155,27 @@
         <td class="manager"><%= @patient.adjustment_manager.name %></td>
       </tr>
     </table>
-    <%# ここにコメントを入れる %>
+    <div class="comment-list">
+      <div class="comments">
+        <h4>＜コメント一覧＞</h4>
+        <% @discharge_comments.each do |comment| %>
+          <p>
+            <strong><%= link_to comment.user.name, "/users/#{comment.user_id}" %>：</strong>
+            <%= comment.text %>
+          </p>
+        <% end %>
+      </div>
+      </div>
+      <div class="container">
+        <% if user_signed_in? %>
+          <%= form_with(model: [@patient, @discharge_comment], local: true) do |form| %>
+            <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
+            <%= form.submit "SEND" %>
+          <% end %>
+        <% else %>
+          <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+        <% end %>
+      </div>
   </div>
   <div class="btn-group">
     <%= link_to "編集ページへ移動", edit_patient_path, method: :get, class: "btn" %>

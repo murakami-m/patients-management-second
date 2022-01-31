@@ -7,6 +7,7 @@ class Patient < ApplicationRecord
   belongs_to :state
   belongs_to :accept_existence
   has_many :accept_comments
+  has_many :discharge_comments
 
   with_options presence: true do
     validates :number, uniqueness: true, numericality: { only_integer: true }, length: { is: 4 }
