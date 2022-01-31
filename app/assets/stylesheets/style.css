@@ -66,3 +66,8 @@ form input[type="submit"] {
   border-radius: 5px;
   border: 1px solid ;
 }
+
+.accept-information {
+  display: flex;
+  justify-content: space-between
+}

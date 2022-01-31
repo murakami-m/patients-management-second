@@ -91,11 +91,30 @@
           <td class="manager"><%= @patient.adjustment_manager.name %></td>
         </tr>
       </table>
-      <%# ここにコメントを入れる %>
+      <div class="comment-list">
+        <div class="comments">
+          <h4>＜コメント一覧＞</h4>
+          <% @accept_comments.each do |comment| %>
+            <p>
+              <strong><%= link_to comment.user.name, "/users/#{comment.user_id}" %>：</strong>
+              <%= comment.text %>
+            </p>
+          <% end %>
+        </div>
+      </div>
+      <div class="container">
+        <% if user_signed_in? %>
+          <%= form_with(model: [@patient, @accept_comment], local: true) do |form| %>
+            <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
+            <%= form.submit "SEND" %>
+          <% end %>
+        <% else %>
+          <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+        <% end %>
+      </div>
     </div>
   <% end%>
 
-  
   <div class="discharge-information">
     退院調整情報
     <table class="table", border="1">
@@ -139,7 +158,7 @@
     <%# ここにコメントを入れる %>
   </div>
   <div class="btn-group">
-      <%= link_to "編集ページへ移動", edit_patient_path, method: :get, class: "btn" %>
-      <%= link_to '患者情報を削除する', patient_path(@patient.id), method: :delete, data: { confirm: '一度削除すると元に戻せませんが、削除しますか？' }, class: "btn" %>
-    </div>
+    <%= link_to "編集ページへ移動", edit_patient_path, method: :get, class: "btn" %>
+    <%= link_to '患者情報を削除する', patient_path(@patient.id), method: :delete, data: { confirm: '一度削除すると元に戻せませんが、削除しますか？' }, class: "btn" %>
+  </div>
 </div>

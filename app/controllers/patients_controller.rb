@@ -2,7 +2,6 @@ class PatientsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_patient, only: [:edit, :show]
 
-  
   def index
     @patients = Patient.all
   end
@@ -20,6 +19,8 @@ class PatientsController < ApplicationController
   end
 
   def show
+    @accept_comment = AcceptComment.new
+    @accept_comments = @patient.accept_comments.includes(:user)
   end
 
   def edit
