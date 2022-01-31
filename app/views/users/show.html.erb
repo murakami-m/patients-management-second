@@ -1,0 +1,21 @@
+<div class="contents row">
+  <p><%= @user.name %>さんの情報</p>
+  <table class="table", border="1">
+      <tr>
+        <th> 項目 </th>
+        <th> 情報 </th>
+      </tr>
+      <tr>
+        <td> 所属部署
+        <td class="department"><%= @user.department.name %></td>
+      </tr>
+      <tr>
+        <td> 職員番号
+        <td class="number"><%= @user.number %></td>
+      </tr>
+      <tr>
+        <td> メールアドレス
+        <td class="email"><%= @user.email %></td>
+      </tr>
+    </table>
+</div>

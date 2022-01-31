@@ -8,6 +8,11 @@
         <%= f.label :職員番号 %><br />
         <%= f.text_field :number, autofocus: true, maxlength: "4" %>
       </div>
+
+      <div class="field">
+        <%= f.label :所属部署 %><br />
+        <%= f.collection_select(:department_id, Department.all, :id, :name, {}, {class:"select-box", id:"department"}) %>
+      </div>
       
       <div class="field">
         <%= f.label :氏名 %><br />

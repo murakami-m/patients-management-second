@@ -31,6 +31,15 @@
   text-align: center;
 }
 
+.header-name {
+  width: 15vw;
+  margin: 10px auto;
+  color: #FF6928;
+  font-size: 25px;
+  text-decoration: none;
+  text-align: center;
+}
+
 .lower-header {
   display: flex;
   justify-content: center;

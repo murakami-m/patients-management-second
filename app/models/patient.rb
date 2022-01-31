@@ -12,7 +12,7 @@ class Patient < ApplicationRecord
     validates :name
     validates :name_kana
     validates :birthday
-    validates :age, numericality: { only_integer: true }, length: { minimum: 1, maximum:3 }
+    validates :age, numericality: { only_integer: true }, length: { minimum: 1, maximum: 3 }
     validates :gender_id, numericality: { other_than: 1 }
     validates :address
     validates :disease
