@@ -26,18 +26,16 @@
         <% end %>
       </div>
       <div class="lower-header">
-        <div class="main-item" id="lists" >
+        <div class="main-item" id="current-lists" >
           入院患者一覧
         </div>
-        <div class="main-item" id="lists" >
-          入院前患者一覧
-        </div>
-        <div class="main-item" id="lists" >
+        <%= link_to "入院前患者", before_hospitalization_patients_path, class: "main-item" %>
+        <div class="main-item" id="discharge-lists" >
           退院後患者一覧
         </div>
         <%= link_to "患者登録", new_patient_path, class: "main-item" %>
       </div>
-      <div class="show-lists hidden" id="pull-down">
+      <div class="show-lists hidden" id="current-pull-down">
         <div>
           <%= link_to "入院患者一覧ページ", root_path, class: "sub-item" %>
         </div>
@@ -49,6 +47,20 @@
         </div>
         <div>
           <%= link_to "整形外科患者一覧ページ", current_orthopedics_patients_path, class: "sub-item" %>
+        </div>
+      </div>
+      <div class="show-lists hidden" id="discharge-pull-down">
+        <div>
+          <%= link_to "退院患者一覧ページ", discharged_patients_patients_path, class: "sub-item" %>
+        </div>
+        <div>
+          <%= link_to "内科病棟退院患者一覧ページ", discharged_medicine_patients_path, class: "sub-item" %>
+        </div>
+        <div>
+          <%= link_to "外科病棟退院患者一覧ページ", discharged_surgery_patients_path, class: "sub-item" %>
+        </div>
+        <div>
+          <%= link_to "整形外科退院患者一覧ページ", discharged_orthopedics_patients_path, class: "sub-item" %>
         </div>
       </div>
     </header>

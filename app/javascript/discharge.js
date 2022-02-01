@@ -1,7 +1,7 @@
 window.addEventListener('load', function(){
 
-  const pullDownButton = document.getElementById("current-lists")
-  const pullDownParents = document.getElementById("current-pull-down")
+  const pullDownButton = document.getElementById("discharge-lists")
+  const pullDownParents = document.getElementById("discharge-pull-down")
 
   pullDownButton.addEventListener('mouseover', function(){
     pullDownButton.setAttribute("style", "background-color:#FFBEDA;")

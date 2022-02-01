@@ -3,7 +3,4 @@
   <%= form.submit "検索", class: "search-btn" %>
 <% end %>
 入院患者一覧
-<%= link_to "内科病棟患者一覧", current_medicine_patients_path, method: :get, class: "btn" %>
-<%= link_to "外科病棟患者一覧", current_surgery_patients_path, method: :get, class: "btn" %>
-<%= link_to "整形外科病棟患者一覧", current_orthopedics_patients_path, method: :get, class: "btn" %>
 <%= render partial: "patient", locals: { patient: @patient } %>
