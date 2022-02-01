@@ -7,6 +7,15 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+    collection do
+      get 'current_medicine'
+    end
+    collection do
+      get 'current_surgery'
+    end
+    collection do
+      get 'current_orthopedics'
+    end
   end
   resources :users, only: :show
 end
