@@ -33,4 +33,13 @@ class Patient < ApplicationRecord
       Patient.all
     end
   end
+
+  def self.current_medicine
+  end
+
+  def self.current_surgery
+  end
+
+  def self.current_orthopedics
+  end
 end

@@ -2,28 +2,8 @@
   <%= form.text_field :keyword, placeholder: "患者を検索する", class: "search-input" %>
   <%= form.submit "検索", class: "search-btn" %>
 <% end %>
-
-<table class="table", border="1">
-  <tr>
-    <th> 入院日 </th>
-    <th> 患者氏名 </th>
-    <th> 年齢 </th>
-    <th> 性別 </th>
-    <th> 主病名 </th>
-    <th> 主治医 </th>
-    <th> 担当者 </th>
-    <th> 病棟 </th>
-  </tr>
-  <% @patients.each do |patient| %>
-    <tr>
-      <td class="hospitalization_date"><%= l patient.hospitalization_date, default: '-' %></td>
-      <td class="name"><%= link_to patient.name, patient_path(patient.id), method: :get, class:"link" %></td>
-      <td class="age"><%= patient.age %></td>
-      <td class="gender"><%= patient.gender.name %></td>
-      <td class="disease"><%= patient.disease %></td>
-      <td class="doctor"><%= patient.doctor.name %></td>
-      <td class="manager"><%= patient.adjustment_manager.name %></td>
-      <td class="ward"><%= patient.ward.name %></td>
-    </tr>
-  <% end %>
-</table>
+入院患者一覧
+<%= link_to "内科病棟患者一覧", current_medicine_patients_path, method: :get, class: "btn" %>
+<%= link_to "外科病棟患者一覧", current_surgery_patients_path, method: :get, class: "btn" %>
+<%= link_to "整形外科病棟患者一覧", current_orthopedics_patients_path, method: :get, class: "btn" %>
+<%= render partial: "patient", locals: { patient: @patient } %>

@@ -1,9 +1,9 @@
 class PatientsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show, :search]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_patient, only: [:edit, :show]
 
   def index
-    @patients = Patient.all
+    @patients = Patient.where(state_id: '2')
   end
 
   def new
@@ -44,7 +44,19 @@ class PatientsController < ApplicationController
   end
 
   def search
-    @patients = Patient.search(params[:keyword])
+    @patients = Patient.search(params[:keyword]).order("hospitalization_date ASC")
+  end
+
+  def current_medicine
+    @patients = Patient.where(state_id: '2', ward_id: '2').order("hospitalization_date ASC")
+  end
+
+  def current_surgery
+    @patients = Patient.where(state_id: '2', ward_id: '3').order("hospitalization_date ASC")
+  end
+
+  def current_orthopedics
+    @patients = Patient.where(state_id: '2', ward_id: '4').order("hospitalization_date ASC")
   end
 
   private
