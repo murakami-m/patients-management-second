@@ -3,7 +3,7 @@ class PatientsController < ApplicationController
   before_action :set_patient, only: [:edit, :show]
 
   def index
-    @patients = Patient.where(state_id: '2')
+    @patients = Patient.where(state_id: '3')
   end
 
   def new
@@ -48,15 +48,15 @@ class PatientsController < ApplicationController
   end
 
   def current_medicine
-    @patients = Patient.where(state_id: '2', ward_id: '2').order("hospitalization_date ASC")
+    @patients = Patient.where(state_id: '3', ward_id: '2').order("hospitalization_date ASC")
   end
 
   def current_surgery
-    @patients = Patient.where(state_id: '2', ward_id: '3').order("hospitalization_date ASC")
+    @patients = Patient.where(state_id: '3', ward_id: '3').order("hospitalization_date ASC")
   end
 
   def current_orthopedics
-    @patients = Patient.where(state_id: '2', ward_id: '4').order("hospitalization_date ASC")
+    @patients = Patient.where(state_id: '3', ward_id: '4').order("hospitalization_date ASC")
   end
 
   private
