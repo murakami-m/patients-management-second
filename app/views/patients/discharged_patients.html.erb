@@ -1,0 +1,5 @@
+退院患者一覧
+<%= link_to "内科病棟退院患者一覧", discharged_medicine_patients_path, method: :get, class: "btn" %>
+<%= link_to "外科病棟退院患者一覧", discharged_surgery_patients_path, method: :get, class: "btn" %>
+<%= link_to "整形外科退院病棟患者一覧", discharged_orthopedics_patients_path, method: :get, class: "btn" %>
+<%= render partial: "discharge_patient", locals: { patient: @patient } %>

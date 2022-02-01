@@ -19,6 +19,18 @@ Rails.application.routes.draw do
     collection do
       get 'before_hospitalization'
     end
+    collection do
+      get 'discharged_patients'
+    end
+    collection do
+      get 'discharged_medicine'
+    end
+    collection do
+      get 'discharged_surgery'
+    end
+    collection do
+      get 'discharged_orthopedics'
+    end
   end
   resources :users, only: :show
 end

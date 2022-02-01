@@ -1,6 +1,7 @@
 <table class="table", border="1">
   <tr>
     <th> 入院日 </th>
+    <th> 退院日 </th>
     <th> 患者氏名 </th>
     <th> 年齢 </th>
     <th> 性別 </th>
@@ -12,6 +13,7 @@
   <% @patients.each do |patient| %>
     <tr>
       <td class="hospitalization-date"><%= l patient.hospitalization_date, default: '-' %></td>
+      <td class="discharge-date"><%= l patient.discharge_date, default: '-' %></td>
       <td class="name"><%= link_to patient.name, patient_path(patient.id), method: :get, class:"link" %></td>
       <td class="age"><%= patient.age %></td>
       <td class="gender"><%= patient.gender.name %></td>

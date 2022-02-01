@@ -45,4 +45,16 @@ class Patient < ApplicationRecord
 
   def self.before_hospitalization
   end
+
+  def self.discharged_patients
+  end
+
+  def self.discharged_medicine
+  end
+
+  def self.discharged_surgery
+  end
+
+  def self.discharged_orthopedics
+  end
 end

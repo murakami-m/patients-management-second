@@ -63,6 +63,22 @@ class PatientsController < ApplicationController
     @patients = Patient.where(state_id: '2').order("accept_expected_date ASC")
   end
 
+  def discharged_patients
+    @patients = Patient.where(state_id: '4').order("discharge_date ASC")
+  end
+
+  def discharged_medicine
+    @patients = Patient.where(state_id: '4', ward_id: '2').order("discharge_date ASC")
+  end
+
+  def discharged_surgery
+    @patients = Patient.where(state_id: '4', ward_id: '3').order("discharge_date ASC")
+  end
+
+  def discharged_orthopedics
+    @patients = Patient.where(state_id: '4', ward_id: '4').order("discharge_date ASC")
+  end
+
   private
 
   def patient_params
