@@ -42,4 +42,7 @@ class Patient < ApplicationRecord
 
   def self.current_orthopedics
   end
+
+  def self.before_hospitalization
+  end
 end

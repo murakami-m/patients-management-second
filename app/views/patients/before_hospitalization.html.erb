@@ -1,0 +1,25 @@
+入院前患者一覧
+<table class="table", border="1">
+  <tr>
+    <th> 入院予定日 </th>
+    <th> 患者氏名 </th>
+    <th> 年齢 </th>
+    <th> 性別 </th>
+    <th> 主病名 </th>
+    <th> 主治医 </th>
+    <th> 担当者 </th>
+    <th> 病棟 </th>
+  </tr>
+  <% @patients.each do |patient| %>
+    <tr>
+      <td class="accept_expected_date"><%= l patient.accept_expected_date, default: '-' %></td>
+      <td class="name"><%= link_to patient.name, patient_path(patient.id), method: :get, class:"link" %></td>
+      <td class="age"><%= patient.age %></td>
+      <td class="gender"><%= patient.gender.name %></td>
+      <td class="disease"><%= patient.disease %></td>
+      <td class="doctor"><%= patient.doctor.name %></td>
+      <td class="manager"><%= patient.adjustment_manager.name %></td>
+      <td class="ward"><%= patient.ward.name %></td>
+    </tr>
+  <% end %>
+</table>

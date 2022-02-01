@@ -16,6 +16,9 @@ Rails.application.routes.draw do
     collection do
       get 'current_orthopedics'
     end
+    collection do
+      get 'before_hospitalization'
+    end
   end
   resources :users, only: :show
 end

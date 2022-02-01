@@ -59,6 +59,10 @@ class PatientsController < ApplicationController
     @patients = Patient.where(state_id: '3', ward_id: '4').order("hospitalization_date ASC")
   end
 
+  def before_hospitalization
+    @patients = Patient.where(state_id: '2').order("accept_expected_date ASC")
+  end
+
   private
 
   def patient_params
