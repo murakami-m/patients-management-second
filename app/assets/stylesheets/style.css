@@ -49,7 +49,7 @@
   margin: 10px 0 20px;
 }
 
-.list {
+.main-item {
   border: 1px solid white;
   background-color: #FFCC33;
   text-decoration: none;
@@ -70,4 +70,15 @@ form input[type="submit"] {
 .accept-information {
   display: flex;
   justify-content: space-between
+}
+
+.show-lists{
+  width: 200px;
+  right: 370px;
+  top: 70px;
+  background-color: #ffffff;
+}
+
+.hidden{
+  display: none;
 }
