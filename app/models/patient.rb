@@ -25,4 +25,12 @@ class Patient < ApplicationRecord
     validates :state_id, numericality: { other_than: 1 }
     validates :accept_existence_id, numericality: { other_than: 1 }
   end
+
+  def self.search(search)
+    if search != ''
+      Patient.where('name LIKE(?)', "%#{search}%")
+    else
+      Patient.all
+    end
+  end
 end

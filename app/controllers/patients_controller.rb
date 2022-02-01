@@ -1,5 +1,5 @@
 class PatientsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :set_patient, only: [:edit, :show]
 
   def index
@@ -41,6 +41,10 @@ class PatientsController < ApplicationController
     @patient = Patient.find(params[:id])
     @patient.destroy
     redirect_to root_path
+  end
+
+  def search
+    @patients = Patient.search(params[:keyword])
   end
 
   private

@@ -93,7 +93,7 @@
       </table>
       <div class="comment-list">
         <div class="comments">
-          <h4>＜コメント一覧＞</h4>
+          <h4>＜転院調整コメント一覧＞</h4>
           <% @accept_comments.each do |comment| %>
             <p>
               <strong><%= link_to comment.user.name, "/users/#{comment.user_id}" %>：</strong>
@@ -157,7 +157,7 @@
     </table>
     <div class="comment-list">
       <div class="comments">
-        <h4>＜コメント一覧＞</h4>
+        <h4>＜退院調整コメント一覧＞</h4>
         <% @discharge_comments.each do |comment| %>
           <p>
             <strong><%= link_to comment.user.name, "/users/#{comment.user_id}" %>：</strong>
