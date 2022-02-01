@@ -44,39 +44,39 @@ class PatientsController < ApplicationController
   end
 
   def search
-    @patients = Patient.search(params[:keyword]).order("hospitalization_date ASC")
+    @patients = Patient.search(params[:keyword]).order('hospitalization_date ASC')
   end
 
   def current_medicine
-    @patients = Patient.where(state_id: '3', ward_id: '2').order("hospitalization_date ASC")
+    @patients = Patient.where(state_id: '3', ward_id: '2').order('hospitalization_date ASC')
   end
 
   def current_surgery
-    @patients = Patient.where(state_id: '3', ward_id: '3').order("hospitalization_date ASC")
+    @patients = Patient.where(state_id: '3', ward_id: '3').order('hospitalization_date ASC')
   end
 
   def current_orthopedics
-    @patients = Patient.where(state_id: '3', ward_id: '4').order("hospitalization_date ASC")
+    @patients = Patient.where(state_id: '3', ward_id: '4').order('hospitalization_date ASC')
   end
 
   def before_hospitalization
-    @patients = Patient.where(state_id: '2').order("accept_expected_date ASC")
+    @patients = Patient.where(state_id: '2').order('accept_expected_date ASC')
   end
 
   def discharged_patients
-    @patients = Patient.where(state_id: '4').order("discharge_date ASC")
+    @patients = Patient.where(state_id: '4').order('discharge_date ASC')
   end
 
   def discharged_medicine
-    @patients = Patient.where(state_id: '4', ward_id: '2').order("discharge_date ASC")
+    @patients = Patient.where(state_id: '4', ward_id: '2').order('discharge_date ASC')
   end
 
   def discharged_surgery
-    @patients = Patient.where(state_id: '4', ward_id: '3').order("discharge_date ASC")
+    @patients = Patient.where(state_id: '4', ward_id: '3').order('discharge_date ASC')
   end
 
   def discharged_orthopedics
-    @patients = Patient.where(state_id: '4', ward_id: '4').order("discharge_date ASC")
+    @patients = Patient.where(state_id: '4', ward_id: '4').order('discharge_date ASC')
   end
 
   private
