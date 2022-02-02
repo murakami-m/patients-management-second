@@ -11,7 +11,7 @@
     <header class="header">
       <div class="upper-header">
         <div class="logo">
-          <%= link_to image_tag('logo.png' , size: '185x50'), "/" %>
+          <%= link_to image_tag("logo.png", size: '185x50', class:"logo-mark"), "/" %>
         </div>
         <% if user_signed_in? %>
           <div class="header-nav">
@@ -36,17 +36,17 @@
         <%= link_to "患者登録", new_patient_path, class: "main-item" %>
       </div>
       <div class="show-lists hidden" id="current-pull-down">
-        <div>
-          <%= link_to "入院患者一覧ページ", root_path, class: "sub-item" %>
+        <div class="sub-item">
+          <%= link_to "入院患者一覧ページ", root_path, class: "sub-item-link" %>
         </div>
-        <div>
-          <%= link_to "内科病棟患者一覧ページ", current_medicine_patients_path, class: "sub-item" %>
+        <div class="sub-item">
+          <%= link_to "内科病棟患者一覧ページ", current_medicine_patients_path, class: "sub-item-link" %>
         </div>
-        <div>
-          <%= link_to "外科病棟患者一覧ページ", current_surgery_patients_path, class: "sub-item" %>
+        <div class="sub-item">
+          <%= link_to "外科病棟患者一覧ページ", current_surgery_patients_path, class: "sub-item-link" %>
         </div>
-        <div>
-          <%= link_to "整形外科患者一覧ページ", current_orthopedics_patients_path, class: "sub-item" %>
+        <div class="sub-item">
+          <%= link_to "整形外科患者一覧ページ", current_orthopedics_patients_path, class: "sub-item-link" %>
         </div>
       </div>
       <div class="show-lists hidden" id="discharge-pull-down">

@@ -1,6 +1,10 @@
-<%= form_with(url: search_patients_path, local: true, method: :get, class: "search-form") do |form| %>
-  <%= form.text_field :keyword, placeholder: "患者を検索する", class: "search-input" %>
-  <%= form.submit "検索", class: "search-btn" %>
-<% end %>
-入院患者一覧
-<%= render partial: "patient", locals: { patient: @patient } %>
+<div class="main-container">
+  <%= form_with(url: search_patients_path, local: true, method: :get, class: "search-form") do |form| %>
+    <%= form.text_field :keyword, placeholder: "患者を検索する", class: "search-input" %>
+    <%= form.submit "検索", class: "search-btn" %>
+  <% end %>
+  <div class="page-title">
+    入院患者一覧  (患者の名前をクリックすると詳細ページに移動します)
+  </div>
+  <%= render partial: "patient", locals: { patient: @patient } %>
+</div>

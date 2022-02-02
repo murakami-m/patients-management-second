@@ -11,6 +11,12 @@
 
 .logo {
   width: 65vw;
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+.logo-mark {
+  border: 1px solid #FF97C2
 }
 
 .header-nav {
@@ -46,7 +52,7 @@
   align-items: center;
   width: 100vw;
   height: 5vh;
-  margin: 10px 0 20px;
+  margin: 10px 0 0;
 }
 
 .main-item {
@@ -55,16 +61,19 @@
   text-decoration: none;
   color: #FF6928;
   font-size: 25px;
-  width: 100vw;
+  width: 25vw;
   height: 5vh;
   text-align: center;
   padding: 5px 0 0;
+  font-size: 28px;
+  
 }
 
 form input[type="submit"] {
   background-color: #FFCC33;
   border-radius: 5px;
   border: 1px solid ;
+  font-size: 20px;
 }
 
 .accept-information {
@@ -72,13 +81,101 @@ form input[type="submit"] {
   justify-content: space-between
 }
 
+.layouts {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('image/logo.png');
+} 
+
+.main-container {
+  background-color: #FFFFCC;
+  width: 100vw;
+  height: 1000px;
+}
+
+.table {
+  background-color: #ffffff;
+  text-align: center;
+  color: navy;
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  border: 2px solid #808080;
+}
+
+.table th {
+  padding: ３px;
+  background-color: #FFCCCC	;
+}
+
+.table td {
+  padding: 3px 10px;
+  background: #FFF0F5;
+}
+
+table tr:nth-child(even) td {
+	background: #fff;
+}
+
+.link {
+  text-decoration: none;
+  color: navy;
+}
+
+.header {
+  background-color: #FFFFCC;
+}
+
+.search-form {
+  padding: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  /* text-align: center;
+  vertical-align: middle; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-input {
+  width: 20vw;
+  height: 30px;
+  font-size: 15px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.page-title {
+  padding-bottom: 15px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: #FF5F17;
+}
+
 .show-lists{
-  width: 200px;
+  width: 25vw;
   right: 370px;
   top: 70px;
-  background-color: #ffffff;
+  background-color: #FFDEAD;
 }
 
 .hidden{
   display: none;
 }
+
+.sub-item {
+  width: 25vw;
+  height: 30px;
+  padding: 5px 0;
+  border: 1px solid #FF5F17;
+  text-align: center;
+  
+}
+
+.sub-item-link {
+  text-decoration: none;
+  font-size: 20px;
+  color: #FF5F17;
+}
+

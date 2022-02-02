@@ -1,15 +1,24 @@
 .basic-information {
-  background-color: aqua;
+  background-color: #fff;
+  background-image:
+    radial-gradient(#7bded9 30%, transparent 30%);
+  background-size: 5px 5px;
   border: 1px solid blue;
 }
 
 .accept-information {
-  background-color: aquamarine;
+  background-color: #fff;
+  background-image:
+    radial-gradient(aquamarine 30%, transparent 30%);
+  background-size: 5px 5px;
   border: 1px solid green;
 }
 
 .discharge-information {
-  background-color: bisque;
+  background-color: #fff;
+  background-image:
+    radial-gradient(bisque 30%, transparent 30%);
+  background-size: 5px 5px;
   border: 1px solid orange;
 }
 
