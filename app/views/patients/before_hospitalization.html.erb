@@ -1,25 +1,29 @@
-入院前患者一覧
-<table class="table", border="1">
-  <tr>
-    <th> 入院予定日 </th>
-    <th> 患者氏名 </th>
-    <th> 年齢 </th>
-    <th> 性別 </th>
-    <th> 主病名 </th>
-    <th> 主治医 </th>
-    <th> 担当者 </th>
-    <th> 病棟 </th>
-  </tr>
-  <% @patients.each do |patient| %>
+<div class="main-container">
+  <div class="page-title">
+    入院前患者一覧
+  </div>
+  <table class="table", border="1">
     <tr>
-      <td class="accept_expected_date"><%= l patient.accept_expected_date, default: '-' %></td>
-      <td class="name"><%= link_to patient.name, patient_path(patient.id), method: :get, class:"link" %></td>
-      <td class="age"><%= patient.age %></td>
-      <td class="gender"><%= patient.gender.name %></td>
-      <td class="disease"><%= patient.disease %></td>
-      <td class="doctor"><%= patient.doctor.name %></td>
-      <td class="manager"><%= patient.adjustment_manager.name %></td>
-      <td class="ward"><%= patient.ward.name %></td>
+      <th> 入院予定日 </th>
+      <th> 患者氏名 </th>
+      <th> 年齢 </th>
+      <th> 性別 </th>
+      <th> 主病名 </th>
+      <th> 主治医 </th>
+      <th> 担当者 </th>
+      <th> 依頼施設 </th>
     </tr>
-  <% end %>
-</table>
+    <% @patients.each do |patient| %>
+      <tr>
+        <td class="accept_expected_date"><%= l patient.accept_expected_date, default: '-' %></td>
+        <td class="name"><%= link_to patient.name, patient_path(patient.id), method: :get, class:"link" %></td>
+        <td class="age"><%= patient.age %></td>
+        <td class="gender"><%= patient.gender.name %></td>
+        <td class="disease"><%= patient.disease %></td>
+        <td class="doctor"><%= patient.doctor.name %></td>
+        <td class="manager"><%= patient.adjustment_manager.name %></td>
+        <td class="before_hospitalization"><%= patient.before_hospitalization %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

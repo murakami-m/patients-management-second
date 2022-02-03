@@ -1,2 +1,6 @@
-外科病棟患者一覧
-<%= render partial: "patient", locals: { patient: @patient } %>
+<div class="main-container">
+  <div class="page-title">
+    外科病棟患者一覧  (患者の名前をクリックすると詳細ページに移動します)
+  </div>
+  <%= render partial: "patient", locals: { patient: @patient } %>
+</div>

@@ -1,25 +1,25 @@
 .basic-information {
-  background-color: #fff;
-  background-image:
-    radial-gradient(#7bded9 30%, transparent 30%);
-  background-size: 5px 5px;
-  border: 1px solid blue;
+  padding-bottom: 20px;
+
+
 }
 
 .accept-information {
   background-color: #fff;
   background-image:
-    radial-gradient(aquamarine 30%, transparent 30%);
+    radial-gradient(bisque 30%, transparent 30%);
   background-size: 5px 5px;
-  border: 1px solid green;
+  border: 1px solid orange;
+  padding: 20px;
 }
 
 .discharge-information {
   background-color: #fff;
   background-image:
-    radial-gradient(bisque 30%, transparent 30%);
+    radial-gradient(aquamarine 30%, transparent 30%);
   background-size: 5px 5px;
-  border: 1px solid orange;
+  border: 1px solid green;
+  padding: 20px;
 }
 
 .comment {
@@ -36,5 +36,40 @@
   margin: 0 auto;
   display: flex;
   justify-content: center;
+}
+
+
+
+.comments {
+  background-color: white;
+  padding: 10px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow: scroll;
+  width: 50vw;
+  height: 350px;
+  margin-left: 20px;
+}
+
+.comment-title {
+  margin: 5px;
+  font-weight: bold;
+}
+
+.oya {
+  display: flex;
+  justify-content: center;
+}
+
+.comment-form {
+  vertical-align: middle;
+}
+
+.aaa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 

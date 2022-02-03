@@ -4,7 +4,6 @@
 }
 
 .new-patients {
-  background-color: #FFFACD	;
   width: 43vw;
   margin-left: auto;
   margin-right: auto;
@@ -15,27 +14,49 @@
 .category {
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   margin-left: 20px;
 }
 
-.weight-bold-text {
+.new-patient-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 300px;
+  height: 35px;
+  margin: 10px 20px 10px 0;
+}
+
+.new-patient-text {
+  font-size: 20px;
+  height: 35px;
+}
+
+/* .weight-bold-text {
   width: 20vw;
   height: 40px;
   margin: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
+} */
 
 .indispensable {
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+.indispensable-text {
   background-color: red;
+  padding: 5px;
+  margin-left: 20px;
 }
 
-.input-form {
+/* .input-form {
   width: 15vw;
   height: 35px;
   margin: 10px 20px 10px 40px;
-}
+} */
 
 .remarks {
   height: 70px;
@@ -52,10 +73,6 @@
 .submit {
   display: flex;
   justify-content: center;
-  margin: 10px 0 15px;
+  margin: 0px 0 15px;
 }
 
-.submit-orange-btn {
-  font-size: 15px;
-  color: #FF6928;
-}

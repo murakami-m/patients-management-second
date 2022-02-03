@@ -35,32 +35,34 @@
         </div>
         <%= link_to "患者登録", new_patient_path, class: "main-item" %>
       </div>
-      <div class="show-lists hidden" id="current-pull-down">
-        <div class="sub-item">
-          <%= link_to "入院患者一覧ページ", root_path, class: "sub-item-link" %>
+      <div class="list-group">
+        <div class="show-lists hidden" id="current-pull-down">
+          <div class="sub-item">
+            <%= link_to "入院患者一覧ページ", root_path, class: "sub-item-link" %>
+          </div>
+          <div class="sub-item">
+            <%= link_to "内科病棟患者一覧ページ", current_medicine_patients_path, class: "sub-item-link" %>
+          </div>
+          <div class="sub-item">
+            <%= link_to "外科病棟患者一覧ページ", current_surgery_patients_path, class: "sub-item-link" %>
+          </div>
+          <div class="sub-item">
+            <%= link_to "整形外科患者一覧ページ", current_orthopedics_patients_path, class: "sub-item-link" %>
+          </div>
         </div>
-        <div class="sub-item">
-          <%= link_to "内科病棟患者一覧ページ", current_medicine_patients_path, class: "sub-item-link" %>
-        </div>
-        <div class="sub-item">
-          <%= link_to "外科病棟患者一覧ページ", current_surgery_patients_path, class: "sub-item-link" %>
-        </div>
-        <div class="sub-item">
-          <%= link_to "整形外科患者一覧ページ", current_orthopedics_patients_path, class: "sub-item-link" %>
-        </div>
-      </div>
-      <div class="show-lists hidden" id="discharge-pull-down">
-        <div>
-          <%= link_to "退院患者一覧ページ", discharged_patients_patients_path, class: "sub-item" %>
-        </div>
-        <div>
-          <%= link_to "内科病棟退院患者一覧ページ", discharged_medicine_patients_path, class: "sub-item" %>
-        </div>
-        <div>
-          <%= link_to "外科病棟退院患者一覧ページ", discharged_surgery_patients_path, class: "sub-item" %>
-        </div>
-        <div>
-          <%= link_to "整形外科退院患者一覧ページ", discharged_orthopedics_patients_path, class: "sub-item" %>
+        <div class="show-lists hidden" id="discharge-pull-down">
+          <div class="sub-item discharge">
+            <%= link_to "退院患者一覧ページ", discharged_patients_patients_path, class: "sub-item-link" %>
+          </div>
+          <div class="sub-item discharge">
+            <%= link_to "内科病棟退院患者一覧ページ", discharged_medicine_patients_path, class: "sub-item-link" %>
+          </div>
+          <div class="sub-item discharge">
+            <%= link_to "外科病棟退院患者一覧ページ", discharged_surgery_patients_path, class: "sub-item-link" %>
+          </div>
+          <div class="sub-item discharge">
+            <%= link_to "整形外科退院患者一覧ページ", discharged_orthopedics_patients_path, class: "sub-item-link" %>
+          </div>
         </div>
       </div>
     </header>

@@ -1,15 +1,19 @@
-<div class="contents row">
+<div class="main-container">
   <div class="container">
-    <h2>ログイン</h2>
-    <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+    <div class="page-title login-title">
+      ログイン
+    </div>
+    <div class="description">
+      (患者登録・編集、コメント投稿にはログインが必要です)
+    </div>
+    <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new-user', local: true do |f| %>
       <div class="field">
-        <%= f.label :メールアドレス %><br />
-        <%= f.email_field :email, autofocus: true %>
+        <%= f.label :メールアドレス, {class: 'login-text'} %><br />
+        <%= f.email_field :email, class:"login-form", autofocus: true, placeholder:"メールアドレスを入力" %>
       </div>
-
       <div class="field">
-        <%= f.label :パスワード %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
+        <%= f.label :パスワード, {class: 'login-text'} %><br />
+        <%= f.password_field :password, class:"login-form", placeholder:"パスワードを入力" %>
       </div>
 
       <div class="actions">

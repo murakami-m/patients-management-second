@@ -1,12 +1,14 @@
-<div class="contents row">
-  <p><%= @name %>さんの情報</p>
+<div class="main-container">
+  <div class="page-title">
+    <%= @name %>さんの情報
+  </div>
   <table class="table", border="1">
       <tr>
         <th> 項目 </th>
         <th> 情報 </th>
       </tr>
       <tr>
-        <td> 所属部署
+        <td> 所属部署（職種）
         <td class="department"><%= @department %></td>
       </tr>
       <tr>

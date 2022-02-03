@@ -1,7 +1,7 @@
 class Department < ActiveHash::Base
   self.data = [
     { id: 1, name: '--' },
-    { id: 2, name: '医局' },
+    { id: 2, name: '医師' },
     { id: 3, name: '看護師' },
     { id: 4, name: '薬剤師' },
     { id: 5, name: 'リハビリ室' },
