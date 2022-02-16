@@ -233,3 +233,11 @@ table tr:nth-child(even) td {
   height: 70px;
   margin: 15px 30px;
 }
+
+.link-btn {
+  text-decoration: none, underline;
+  
+  font-size: 20px;
+  padding: 10px;
+  color: #FF5F17;
+}
