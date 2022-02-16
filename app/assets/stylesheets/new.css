@@ -3,13 +3,13 @@
   margin-top: 50px;
 }
 
-.new-patients {
+/* .new-patients {
   width: 43vw;
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
   font-size: 20px;
-}
+} */
 
 .category {
   display: flex;
@@ -18,7 +18,7 @@
   margin-left: 20px;
 }
 
-.new-patient-item {
+.new-patient-item,.edit-patient-item {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -27,7 +27,7 @@
   margin: 10px 20px 10px 0;
 }
 
-.new-patient-text {
+.new-patient-text,.edit-patient-text {
   font-size: 20px;
   height: 35px;
 }
@@ -58,10 +58,7 @@
   margin: 10px 20px 10px 40px;
 } */
 
-.remarks {
-  height: 70px;
-  margin-bottom: 25px;
-}
+
 
 .date {
   width: 15vw;

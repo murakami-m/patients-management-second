@@ -7,35 +7,53 @@
     <%= render 'shared/error_messages', model: @patient %>
 
     <div class="basic-information">
-      患者基本情報
+      <div class="page-title basic-title">
+        患者基本情報
+      </div>
       <div class="category patient-number">
-        <div class="weight-bold-text">
-          患者ID
-          <span class="indispensable">必須</span>
+        <div class="edit-patient-item">
+          <div class="edit-patient-text">
+            患者ID
+          </div>
+          <div class="indispensable">
+            <span class="indispensable-text">必須</span>
+          </div>
         </div>
-        <%= f.text_field :number, class:"input-form", id:"patient-number", placeholder:"半角数字8桁", maxlength:"8" %>
+        <%= f.text_field :number, class:"edit-patient-form", id:"patient-number", placeholder:"半角数字8桁", maxlength:"8" %>
       </div>
       
       <div class="category patient-name">
-        <div class="weight-bold-text">
-          氏名
-          <span class="indispensable">必須</span>
+        <div class="edit-patient-item">
+          <div class="edit-patient-text">
+            患者氏名
+          </div>
+          <div class="indispensable">
+            <span class="indispensable-text">必須</span>
+          </div>
         </div>
-        <%= f.text_field :name, class:"input-form", id:"patient-name", placeholder:"名字と名前の間に全角スペースを入れてください", maxlength:"10" %>
+        <%= f.text_field :name, class:"edit-patient-form", id:"patient-name", placeholder:"名字と名前の間に全角スペースを入れてください", maxlength:"10" %>
       </div>
       <div class="category patient-name-kana">
-        <div class="weight-bold-text">
-          氏名（カタカナ）
-          <span class="indispensable">必須</span>
+        <div class="edit-patient-item">
+          <div class="edit-patient-text">
+            患者氏名（カタカナ）
+          </div>
+          <div class="indispensable">
+            <span class="indispensable-text">必須</span>
+          </div>
         </div>
-        <%= f.text_field :name_kana, class:"input-form", id:"patient-name-kana", placeholder:"名字と名前の間に全角スペースを入れてください", maxlength:"10" %>
+        <%= f.text_field :name_kana, class:"edit-patient-form", id:"patient-name-kana", placeholder:"名字と名前の間に全角スペースを入れてください", maxlength:"10" %>
       </div>
       <div class="category patient-birthday">
-        <div class="weight-bold-text">
-          生年月日
-          <span class="indispensable">必須</span>
+        <div class="edit-patient-item">
+          <div class="edit-patient-text">
+            生年月日
+          </div>
+          <div class="indispensable">
+            <span class="indispensable-text">必須</span>
+          </div>
         </div>
-        <div class='input-form date'>
+        <div class='edit-patient-form date'>
           <%= raw sprintf(
             f.date_select(
               :birthday,
@@ -50,24 +68,35 @@
         </div>
       </div>
       <div class="category patient-age">
-        <div class="weight-bold-text">
-          年齢
-          <span class="indispensable">必須</span>
+        <div class="edit-patient-item">
+          <div class="edit-patient-text">
+            年齢
+          </div>
+          <div class="indispensable">
+            <span class="indispensable-text">必須</span>
+          </div>
         </div>
-        <%= f.text_field :age, class:"input-form", id:"patient-age", placeholder:"半角数字で入力" %>
+        <%= f.text_field :age, class:"edit-patient-form", id:"patient-age", placeholder:"半角数字で入力" %>
       </div>
       <div class="category patient-gender">
-        <div class="weight-bold-text">
-          性別
-          <span class="indispensable">必須</span>
+        <div class="edit-patient-item">
+          <div class="edit-patient-text">
+            性別
+          </div>
+          <div class="indispensable">
+            <span class="indispensable-text">必須</span>
+          </div>
         </div>
-        <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"input-form", id:"patient-gender"}) %>
+        <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"edit-patient-form", id:"patient-gender"}) %>
       </div>
+
       <div class="category hospitalization-date">
-        <div class="weight-bold-text">
-          入院日(入院患者登録の場合のみ)
+        <div class="edit-patient-item">
+          <div class="edit-patient-text">
+            入院日(入院患者登録の場合のみ)
+          </div>
         </div>
-        <div class='input-form date'>
+        <div class='edit-patient-form date'>
           <%= raw sprintf(
             f.date_select(
               :hospitalization_date,
@@ -81,16 +110,18 @@
             "年 ", "月 ") + "日 " %>
         </div>
       </div>
-      <div class="category hospitalization-date">
-        <div class="weight-bold-text discharge">
-          退院日<br>
+      <div class="category discharge-date">
+        <div class="edit-patient-item">
+          <div class="edit-patient-text">
+            退院日
+          </div>
         </div>
-        <div class='input-form date'>
+        <div class='edit-patient-form date'>
           <%= raw sprintf(
             f.date_select(
               :discharge_date,
-              class:'hospitalization-date',
-              id:"hospitalization-date",
+              class:'discharge-date',
+              id:"discharge-date",
               use_month_numbers: true,
               prompt:'--',
               start_year: 2022,
@@ -100,41 +131,62 @@
         </div>
       </div>
       <div class="category patient-disease">
-        <div class="weight-bold-text">
-          主病名
-          <span class="indispensable">必須</span>
+        <div class="edit-patient-item">
+          <div class="edit-patient-text">
+            主病名
+          </div>
+          <div class="indispensable">
+            <span class="indispensable-text">必須</span>
+          </div>
         </div>
-        <%= f.text_field :disease, class:"input-form", id:"patient-disease", maxlength:"20" %>
+        <%= f.text_field :disease, class:"edit-patient-form", id:"patient-disease", maxlength:"20" %>
       </div>
+
       <div class="category patient-state">
-        <div class="weight-bold-text">
-          現在の状況
-          <span class="indispensable">必須</span>
+        <div class="edit-patient-item">
+          <div class="edit-patient-text">
+            現在の状況
+          </div>
         </div>
-        <%= f.collection_select(:state_id, State.all, :id, :name, {}, {class:"input-form", id:"patient-state"}) %>
+        <%= f.collection_select(:state_id, State.all, :id, :name, {}, {class:"edit-patient-form", id:"patient-state"}) %>
       </div>
+
       <div class="category patient-ward">
-        <div class="weight-bold-text">
-          病棟
-          <span class="indispensable">必須</span>
+        <div class="edit-patient-item">
+          <div class="edit-patient-text">
+            病棟
+          </div>
+          <div class="indispensable">
+            <span class="indispensable-text">必須</span>
+          </div>
         </div>
-        <%= f.collection_select(:ward_id, Ward.all, :id, :name, {}, {class:"input-form", id:"patient-ward"}) %>
+        <%= f.collection_select(:ward_id, Ward.all, :id, :name, {}, {class:"edit-patient-form", id:"patient-ward"}) %>
       </div>
+
       <div class="category patient-doctor">
-        <div class="weight-bold-text">
-          主治医
-          <span class="indispensable">必須</span>
+        <div class="edit-patient-item">
+          <div class="edit-patient-text">
+            主治医
+          </div>
+          <div class="indispensable">
+            <span class="indispensable-text">必須</span>
+          </div>
         </div>
-        <%= f.collection_select(:doctor_id, Doctor.all, :id, :name, {}, {class:"input-form", id:"patient-doctor"}) %>
+        <%= f.collection_select(:doctor_id, Doctor.all, :id, :name, {}, {class:"edit-patient-form", id:"patient-doctor"}) %>
       </div>
+    </div>
     <% if @patient.accept_existence_id == 2 %>  
       <div class="accept-information">
-        転院調整情報
+        <div class="page-title accept-title">
+          転院調整情報
+        </div>
         <div class="category accept_expected-date">
-          <div class="weight-bold-text discharge">
-            入院希望日<br>
+          <div class="edit-patient-item">
+            <div class="edit-patient-text">
+              入院希望日
+            </div>
           </div>
-          <div class='input-form date'>
+          <div class='edit-patient-form date'>
             <%= raw sprintf(
               f.date_select(
                 :accept_expected_date,
@@ -148,22 +200,53 @@
               "年 ", "月 ") + "日 " %>
           </div>
         </div>
-        <div class="category patient-address">
-          <div class="weight-bold-text">
-            住所
-            <span class="indispensable">必須</span>
+        
+        <div class="category discharge-date">
+          <div class="edit-patient-item">
+            <div class="edit-patient-text">
+              退院日
+            </div>
           </div>
-          <%= f.text_field :address, class:"input-form", id:"patient-address", placeholder:"(例)兵庫県神戸市", maxlength:"15" %>
+          <div class='edit-patient-form date'>
+            <%= raw sprintf(
+              f.date_select(
+                :discharge_date,
+                class:'discharge-date',
+                id:"discharge-date",
+                use_month_numbers: true,
+                prompt:'--',
+                start_year: 2022,
+                end_year: (Time.now.year + 10),
+                date_separator: '%s'),
+              "年 ", "月 ") + "日 " %>
+          </div>
+        </div>
+
+        <div class="category patient-address">
+          <div class="edit-patient-item">
+            <div class="edit-patient-text">
+              住所
+            </div>
+            <div class="indispensable">
+              <span class="indispensable-text">必須</span>
+            </div>
+          </div>
+          <%= f.text_field :address, class:"edit-patient-form", id:"patient-address", placeholder:"(例)兵庫県神戸市", maxlength:"15" %>
         </div>
       </div>
     <% end %>
+
     <div class="discharge-information">
-      退院調整情報(※の項目は退院調整情報と共通)
+      <div class="page-title discharge-title">
+        退院調整情報(※の項目は転院調整情報と共通)
+      </div>
       <div class="category discharge-expected-date">
-        <div class="weight-bold-text discharge">
-          退院予定(希望)日<br>
+        <div class="edit-patient-item">
+          <div class="edit-patient-text">
+            退院予定(希望)日
+          </div>
         </div>
-        <div class='input-form date'>
+        <div class='edit-patient-form date'>
           <%= raw sprintf(
             f.date_select(
               :discharge_expected_date,
@@ -177,42 +260,61 @@
             "年 ", "月 ") + "日 " %>
         </div>
       </div>
+
       <div class="category before-hospitalization">
-        <div class="weight-bold-text">
-          入院前施設 ※
-          <span class="indispensable">必須</span>
+        <div class="edit-patient-item">
+          <div class="edit-patient-text">
+            入院前施設 ※
+          </div>
+          <div class="indispensable">
+            <span class="indispensable-text">必須</span>
+          </div>
         </div>
-        <%= f.text_field :before_hospitalization, class:"input-form", id:"before-hospitalization", placeholder:"(例)自宅・特養◯◯など", maxlength:"20" %>
+        <%= f.text_field :before_hospitalization, class:"edit-patient-form", id:"before-hospitalization", placeholder:"(例)自宅・特養◯◯など", maxlength:"20" %>
       </div>
+
       <div class="category key-person-relationship">
-        <div class="weight-bold-text">
-          キーパーソン ※
-          <span class="indispensable">必須</span>
+        <div class="edit-patient-item">
+          <div class="edit-patient-text">
+            キーパーソン ※
+          </div>
+          <div class="indispensable">
+            <span class="indispensable-text">必須</span>
+          </div>
         </div>
-        <%= f.text_field :key_person_relationship, class:"input-form", id:"key-person-relationship", placeholder:"いない場合は「なし」と入力", maxlength:"10" %>
+        <%= f.text_field :key_person_relationship, class:"edit-patient-form", id:"key-person-relationship", placeholder:"いない場合は「なし」と入力", maxlength:"10" %>
       </div>
+
       <div class="category key_person_address">
-        <div class="weight-bold-text">
-          キーパーソン住所
+        <div class="edit-patient-item">
+          <div class="edit-patient-text">
+            キーパーソン住所
+          </div>
         </div>
-        <%= f.text_field :key_person_address, class:"input-form", id:"key_person_address", maxlength:"10" %>
+        <%= f.text_field :key_person_address, class:"edit-patient-form", id:"key_person_address", maxlength:"10" %>
       </div>
+
       <div class="category remarks">
-        <div class="weight-bold-text">
-          家族背景・その他 ※
+        <div class="edit-patient-item">
+          <div class="edit-patient-text">
+            家族背景・その他 ※
+          </div>
         </div>
-        <%= f.text_area :remarks, class:"input-form remarks", id:"remarks", placeholder:"(例)同居の妻は入院中など", maxlength:"50" %>
+        <%= f.text_area :remarks, class:"edit-patient-form remarks", id:"remarks", placeholder:"(例)同居の妻は入院中など", maxlength:"50" %>
       </div>
+
       <div class="category adjustment-manager">
-        <div class="weight-bold-text">
-          担当者 ※ 
+        <div class="edit-patient-item">
+          <div class="edit-patient-text">
+            担当者 ※
+          </div>
         </div>
-        <%= f.collection_select(:adjustment_manager_id, AdjustmentManager.all, :id, :name, {}, {class:"input-form", id:"adjustment-manager"}) %>
+        <%= f.collection_select(:adjustment_manager_id, AdjustmentManager.all, :id, :name, {}, {class:"edit-patient-form", id:"adjustment-manager"}) %>
       </div>
     </div>
     <div class="comment">
-      ※入院する場合は入院日と状況を変更してください<br>
-      ※退院する場合は退院日と状況を変更してください
+      ※入院する場合は <span style="font-size:130%;"><u>入院日と状況</u></span> を変更してください<br>
+      ※退院する場合は <span style="font-size:130%;"><u>退院日と状況</u></span> を変更してください
     </div>
     <div class="submit-completion">
       <div class='submit-btn'> 

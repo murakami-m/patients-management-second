@@ -1,6 +1,6 @@
 <div class="main-container">
   <div class="basic-information">
-    <div class="page-title basic-title">
+    <div class="page-title">
       患者基本情報
     </div>
     <table class="table show-table", border="1">
@@ -63,8 +63,8 @@
       <div class="page-title accept-title">
         転院調整情報
       </div>
-      <div class="oya">
-        <div class="ko-1">
+      <div class="accept-information-item">
+        <div class="left-part">
           <table class="table", border="1">
             <tr>
               <th> 項目 </th>
@@ -97,7 +97,7 @@
           </table>
           <div class="comment-form">
             <% if user_signed_in? %>
-              <%= form_with(model: [@patient, @accept_comment], local: true, class:"aaa") do |form| %>
+              <%= form_with(model: [@patient, @accept_comment], local: true, class:"accept-comment-form") do |form| %>
                 <%= form.text_area :text, placeholder: "コメントを入力", class: "post-comment", rows: "2" %>
                 <%= form.submit "コメントを投稿", class:"comment-btn" %>
               <% end %>
@@ -106,7 +106,7 @@
             <% end %>
           </div>
         </div>
-        <div class="comment-list">
+        <div class="right-part">
           <div class="comments">
             <div class="comment-title">
               ＜転院調整コメント一覧＞
@@ -127,8 +127,8 @@
     <div class="page-title discharge-title">
       退院調整情報
     </div>
-    <div class="oya">
-      <div class="ko-1">
+    <div class="discharge-information-item">
+      <div class="left-part">
         <table class="table", border="1">
           <tr>
             <th> 項目 </th>
@@ -169,16 +169,16 @@
         </table>
         <div class="comment-form">
           <% if user_signed_in? %>
-            <%= form_with(model: [@patient, @discharge_comment], local: true) do |form| %>
-              <%= form.text_area :text, placeholder: "コメントを入力", rows: "2" %>
-              <%= form.submit "SEND" %>
+            <%= form_with(model: [@patient, @discharge_comment], local: true, class:"discharge-comment-form") do |form| %>
+              <%= form.text_area :text, placeholder: "コメントを入力", class: "post-comment", rows: "2" %>
+              <%= form.submit "コメントを投稿", class:"comment-btn" %>
             <% end %>
           <% else %>
             <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
           <% end %>
         </div>
       </div>
-      <div class="comment-list">
+      <div class="right-part">
         <div class="comments">
           <h4>＜退院調整コメント一覧＞</h4>
           <% @discharge_comments.each do |comment| %>

@@ -4,7 +4,7 @@
     <%= form.submit "検索", class: "search-btn" %>
   <% end %>
   <div class="page-title">
-    検索結果
+    検索結果  (患者の名前をクリックすると詳細ページに移動します)
   </div>
   <table class="table", border="1">
     <tr>
@@ -17,6 +17,7 @@
       <th> 担当者 </th>
       <th> 病棟 </th>
       <th> 退院日 </th>
+      <th> 状態 </th>
     </tr>
     <% @patients.each do |patient| %>
       <tr>
@@ -29,6 +30,7 @@
         <td class="manager"><%= patient.adjustment_manager.name %></td>
         <td class="ward"><%= patient.ward.name %></td>
         <td class="discharge_date"><%= l patient.discharge_date, default: '-' %></td>
+        <td class="state"><%= patient.state.title %></td>
       </tr>
     <% end %>
   </table>
