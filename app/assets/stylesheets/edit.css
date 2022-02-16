@@ -1,8 +1,8 @@
-.basic-information,.accept-information,.discharge-information {
+.basic-information,.edit-basic-information.accept-information,.discharge-information {
   padding: 0 20px 50px;
 }
 
-.basic-information,.accept-form,.discharge-form {
+.edit-basic-information,.accept-form,.discharge-form {
   margin-left: 30vw;
 }
 .accept-information {
